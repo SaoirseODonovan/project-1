@@ -1,0 +1,420 @@
+{% extends "base.html" %} {% block title %}Early Days | Quiz{% endblock %} {% block
+    content_MAIN %}
+
+    <div class="main">
+      <!-- reference: https://formbold.com/templates/quiz-form -->
+
+      <div class="form">
+        <div class="image">
+            <img src="static\images\logo_simple.png" alt="logo" style="width:200px;height:30px;">
+        </div>
+        <form method="POST">
+          <div class="question">
+            <label for="username">Username</label>
+            <input
+                type="text"
+                class="form-control {{ 'is-invalid' if 'username' in invalid_fields }}"
+                id="username"
+                name="username"
+                placeholder="Enter username..."
+                value="{{ request.form.username }}" 
+            />
+            {% if 'username' in invalid_fields %}
+            <div class="invalid-feedback"></div>
+            {% endif %}
+          </div>
+          <div style="padding-bottom: 20px;">
+            <h2 style="color: black">Is it a dealbreaker if: </h2>
+          </div>
+          <div class="question">
+            <label for="qusOne" class="label">
+              Your partner does not want a kid(s)?
+            </label>
+    
+            <div class="radio">
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusOne"
+                    id="qusOneYes"
+                    value="Yes"
+                  />
+                  Yes
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusOne"
+                    id="qusOneNo"
+                    value="No"
+                  />
+                  No
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusOne"
+                    id="qusOneNotSure"
+                    value="NotSure"
+                  />
+                  Not sure
+                  <span class="option"></span>
+                </label>
+              </div>
+
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusOne"
+                    id="qusOneIndifferent"
+                    value="Indifferent"
+                  />
+                  Indifferent
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div class="question">
+            <label for="qusTwo" class="label">
+              Your partner has a kid(s)?
+            </label>
+    
+            <div class="radio">
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusTwo"
+                    id="qusTwoYes"
+                    value="Yes"
+                  />
+                  Yes
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusTwo"
+                    id="qusTwoNo"
+                    value="No"
+                  />
+                  No
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusTwo"
+                    id="qusTwoNotSure"
+                    value="NotSure"
+                  />
+                  Not sure
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusTwo"
+                    id="qusTwoIndifferent"
+                    value="Indifferent"
+                  />
+                  Indifferent
+                  <span class="option"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <div>
+            <label for="qusThree" class="label">
+              Your partner has been previously married?
+            </label>
+    
+            <div class="radio">
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusThree"
+                    id="qusThreeYes"
+                    value="Yes"
+                  />
+                  Yes
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusThree"
+                    id="qusThreeNo"
+                    value="No"
+                  />
+                  No
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusThree"
+                    id="qusThreeNotSure"
+                    value="NotSure"
+                  />
+                  Not sure
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusThree"
+                    id="qusThreeIndifferent"
+                    value="Indifferent"
+                  />
+                  Indifferent
+                  <span class="option"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="qusFour" class="label">
+              Your partners parents are divorced?
+            </label>
+    
+            <div class="radio">
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFour"
+                    id="qusFourYes"
+                    value="Yes"
+                  />
+                  Yes
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFour"
+                    id="qusFourNo"
+                    value="No"
+                  />
+                  No
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFour"
+                    id="qusFourNotSure"
+                    value="NotSure"
+                  />
+                  Not sure
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFour"
+                    id="qusFourIndifferent"
+                    value="Indifferent"
+                  />
+                  Indifferent
+                  <span class="option"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="question">
+            <label for="qusFive" class="label">
+              Your partner has bad hygiene?
+            </label>
+    
+            <div class="radio">
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFive"
+                    id="qusFiveYes"
+                    value="Yes"
+                  />
+                  Yes
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFive"
+                    id="qusFiveNo"
+                    value="No"
+                  />
+                  No
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFive"
+                    id="qusFiveNotSure"
+                    value="NotSure"
+                  />
+                  Not sure
+                  <span class="option"></span>
+                </label>
+              </div>
+
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusFive"
+                    id="qusFiveIndifferent"
+                    value="Indifferent"
+                  />
+                  Indifferent
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+            </div>
+          </div>
+    
+          <div class="question">
+            <label for="qusSix" class="label">
+              Your partner lives more than 3 hours away?
+            </label>
+    
+            <div class="radio">
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusSix"
+                    id="qusSixYes"
+                    value="Yes"
+                  />
+                  Yes
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusSix"
+                    id="qusSixNo"
+                    value="No"
+                  />
+                  No
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusSix"
+                    id="qusSixNotSure"
+                    value="NotSure"
+                  />
+                  Not sure
+                  <span class="option"></span>
+                </label>
+              </div>
+    
+              <div class="group">
+                <label class="text">
+                  <input
+                    class="answer"
+                    type="radio"
+                    name="qusSix"
+                    id="qusSixIndifferent"
+                    value="Indifferent"
+                  />
+                  Indifferent
+                  <span class="option"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <button type="submit" class="button">Submit</button>
+        </form>
+      </div>
+    </div>
+    {% endblock %}
+  
