@@ -2,3 +2,4 @@
 *.exe
 #some files not meant to be versioned in git 
 __pycache__/
+__init__.py
