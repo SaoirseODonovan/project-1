@@ -55,3 +55,8 @@ def submission():
 def welcome():
     return render_template("welcome.html", user=current_user)
 
+@views.route('/group', methods=['GET', 'POST'])
+@login_required
+def group():
+    return render_template("group.html", user=current_user)
+
